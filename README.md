@@ -1,5 +1,16 @@
 Screenshot of the website<br>
-This was our first assignment of the course Web engineering 
+This was our first assignment of the course Web engineering.
+We were tasked in making a website similar to that of W3Schools.
+
+Features
+  -Homepage/index page
+  -Both sidebar and navbar
+  -Breadcrumbs on everypage
+  -atleast 5 languages.
+  -Video available for each code displayed
+  -Take Quiz button on the top right
+
+
 <br><h1> HomePage </h1>
 <br>
 ![image](https://github.com/SulemanMohiuddin/Coding-Website/assets/96354394/2fd76588-524a-4985-9aee-6ad6a4a42aee)
@@ -39,3 +50,12 @@ This was our first assignment of the course Web engineering
 
 
 <br>
+
+<br>
+<br><h1> C++ </h1>
+
+![image](https://github.com/SulemanMohiuddin/Coding-Website/assets/96354394/d9c1508f-5743-4a6c-b68a-0332502bc696)
+
+
+<br>
+
