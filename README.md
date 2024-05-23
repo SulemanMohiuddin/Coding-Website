@@ -19,14 +19,23 @@ This was our first assignment of the course Web engineering
 
 <br>
 <br><h1>Python</h1>
-![image](https://github.com/SulemanMohiuddin/Coding-Website/assets/96354394/926ac667-dc05-454b-a1e0-4e1ddc8eb204)
 
+![image](https://github.com/SulemanMohiuddin/Coding-Website/assets/96354394/926ac667-dc05-454b-a1e0-4e1ddc8eb204)
 <br>
 <br><h1>HTML</h1>
+
 ![image](https://github.com/SulemanMohiuddin/Coding-Website/assets/96354394/c345df6b-08bc-4f4b-972e-d02a33d0622d)
 
 <br>
 <br><h1>C Language </h1>
+
+![image](https://github.com/SulemanMohiuddin/Coding-Website/assets/96354394/8f2e74d3-171a-4165-bd2e-8c699c0087c3)
+
+
 <br>
 <br><h1> C++ </h1>
+
+![image](https://github.com/SulemanMohiuddin/Coding-Website/assets/96354394/e25b6a95-68ac-4e59-b935-93a393a8826f)
+
+
 <br>
