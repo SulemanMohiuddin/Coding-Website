@@ -1,0 +1,281 @@
+<html>
+<head>
+    <title>Java</title>    
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link href="css/Cstyle.css" rel="stylesheet" />
+
+</head>
+<body class="flex bg-zinc-500">
+
+    <div class="navbar bg-transparent fixed top-0 right-0 w-16 z-50 ">
+        <button class="text-center text-gray-800 text-lg py-2"><a href="Quiz.html">Take Quiz</a></button>
+    </div>
+
+    <aside class="w-16 h-screen py-10 overflow-y-auto bg-gray-100 border-r rtl:border-l rtl:border-r-0 dark:bg-gray-900 dark:border-gray-700 fixed">
+        <nav class="flex flex-col space-y-8 items-center">
+            <a href="index.html">
+                <img class="w-auto h-6 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSQ2jwnC4gZck10hroFUVn1Pf0odvuGJgwVA&usqp=CAU" alt="">
+            </a>
+    
+            <a href="java.html" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 ">
+                <svg  fill="#000000" viewBox="0 0 32 32" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+                    <title>Java</title>
+                    <path d="M23.039 3.993h-12.191c-0.442 0-0.8 0.358-0.8 0.8v0.929c0 0.442 0.358 0.8 0.8 0.8h10.463v12.863c0.005 0.092 0.007 0.201 0.007 0.309 0 1.66-0.625 3.174-1.653 4.32l0.005-0.006c-1.072 1.085-2.561 1.757-4.206 1.757-0.138 0-0.274-0.005-0.41-0.014l0.018 0.001c-0.117 0.008-0.254 0.013-0.392 0.013-1.646 0-3.135-0.672-4.207-1.757l-0.001-0.001c-1.023-1.139-1.649-2.653-1.649-4.313 0-0.109 0.003-0.217 0.008-0.325l-0.001 0.015v-2.655c-0-0.442-0.358-0.8-0.8-0.8h-0.928c-0.442 0-0.8 0.358-0.8 0.8v2.687c-0.003 0.091-0.005 0.197-0.005 0.304 0 2.327 0.885 4.447 2.337 6.042l-0.007-0.007c1.528 1.567 3.659 2.538 6.018 2.538 0.15 0 0.299-0.004 0.446-0.012l-0.021 0.001c0.127 0.007 0.275 0.011 0.424 0.011 2.358 0 4.489-0.972 6.015-2.536l0.002-0.002c1.446-1.588 2.331-3.708 2.331-6.036 0-0.106-0.002-0.212-0.006-0.318l0 0.015v-14.623c-0.001-0.442-0.359-0.8-0.801-0.8v0z"></path>
+                </svg>
+            </a>
+    
+            <a href="python.html" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+                <svg fill="#000000" viewBox="0 0 32 32" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+                    <title>Python</title>
+                    <path d="M24.223 6.397c-1.592-1.495-3.741-2.413-6.104-2.413-0.137 0-0.274 0.003-0.41 0.009l0.019-0.001h-8.416c-0.442 0-0.8 0.358-0.8 0.8v22.4c0 0.442 0.358 0.8 0.8 0.801h0.928c0.442-0.001 0.8-0.359 0.8-0.801v0-6.561h6.688c0.117 0.005 0.253 0.009 0.391 0.009 2.363 0 4.512-0.918 6.108-2.417l-0.005 0.004c1.521-1.457 2.466-3.504 2.466-5.772 0-0.050-0-0.101-0.001-0.151l0 0.008c0.001-0.042 0.001-0.093 0.001-0.143 0-2.268-0.945-4.316-2.463-5.771l-0.003-0.003zM11.040 6.521h6.624c0.12-0.008 0.259-0.012 0.4-0.012 1.678 0 3.208 0.636 4.361 1.68l-0.006-0.005c1.054 0.998 1.709 2.407 1.709 3.969 0 0.056-0.001 0.112-0.003 0.168l0-0.008c0.001 0.047 0.002 0.101 0.002 0.156 0 1.569-0.656 2.985-1.709 3.988l-0.002 0.002c-1.145 1.047-2.676 1.689-4.357 1.689-0.14 0-0.278-0.004-0.416-0.013l0.019 0.001h-6.624z"></path>
+                </svg>
+            </a>
+    
+            <a href="html.html" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+                <svg fill="#000000" viewBox="0 0 32 32" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
+                    <title>HTML</title>
+                    <path d="M25.264 3.993h-0.928c-0.442 0-0.8 0.358-0.801 0.8v9.952h-15.038v-9.952c-0-0.442-0.358-0.8-0.8-0.8h-0.928c-0.442 0-0.8 0.358-0.8 0.8v22.4c0 0.442 0.358 0.8 0.8 0.801h0.928c0.442-0.001 0.8-0.359 0.8-0.801v0-9.952h15.038v9.952c0.001 0.442 0.359 0.8 0.801 0.801h0.928c0.442-0.001 0.8-0.359 0.801-0.801v-22.4c-0.001-0.442-0.359-0.8-0.801-0.8h-0z"></path>
+                </svg>
+            </a>
+    
+            <a href="c.html" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+                <svg width="24px" height="24px" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <title>C language</title>
+                    <path d="M10 5.5L9.93198 5.43198C9.33524 4.83524 8.52589 4.5 7.68198 4.5H7.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5H7.68198C8.52589 10.5 9.33524 10.1648 9.93198 9.56802L10 9.5M1.5 10.5V4.5L7.5 1L13.5 4.5V10.5L7.5 14L1.5 10.5Z" stroke="#000000"/>
+                </svg>
+            </a>
+    
+            <a href="c++.html" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+                <svg width="24px" height="24px" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <title>C++</title>
+                    <path d="M9.5 5V10M11.5 5V10M8 6.5H13M8 8.5H13M8 10L7.59787 10.2011C7.20469 10.3977 6.77114 10.5 6.33156 10.5C4.76773 10.5 3.5 9.23227 3.5 7.66844V7.33156C3.5 5.76773 4.76773 4.5 6.33156 4.5C6.77114 4.5 7.20469 4.60235 7.59787 4.79894L8 5M1.5 10.5V4.5L7.5 1L13.5 4.5V10.5L7.5 14L1.5 10.5Z" stroke="#000000"/>
+                </svg>
+                
+            </a>
+        </nav>
+    </aside>
+
+    <div class="flex flex-col flex-1 bg-white py-10 px-16">
+        <div class="text-sm breadcrumbs p-4">
+            <ul class="flex space-x-2">
+                <li><a href="home.html" class="text-gray-500 hover:text-gray-700">Home</a></li>
+                <li>/</li>
+                <li><a href="java.html">Java</a></li>
+            </ul>
+        </div>
+  
+    
+
+        <div class="flex-1 p-8">
+            <!-- Printing Section -->
+            <h1 class="font-bold text-2xl">Printing</h1>
+            <br>
+            <div class="flex w-4/5">
+            <div class="code-editor">
+                <!-- Code Editor Header -->
+                <div class="header">
+                    <span class="title">Java</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon">
+                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                            <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+                        </g>
+                    </svg>
+                </div>
+                <!-- Code Editor Content -->
+                <div class="editor-content mr-4">
+                    <code class="code">
+                        <p><span class="color-0">public class</span> <span class="color-1">HelloWorld</span> <span>{</span></p>
+                        <p class="property"><span class="color-2">public static void</span> main(String[] args) <span>{</span></p>
+                        <p class="property">System.out.println(<span class="color-3">"Hello, World!"</span>);</p>
+                        <p class="property"><span>}</span></p>
+                        <p><span>}</span></p>
+                    </code>
+                </div>
+
+            </div>
+        
+                            <!-- Video Selector and Player -->
+                            <div class="video-selector px-32 ">
+                                <div class="flex flex-col items-center">
+                                    <label for="video-select" class="mb-2">Select a video:</label>
+                                    <select id="video-select" class="mb-4">
+                                        <option value="https://www.youtube.com/embed/so1iUWaLmKA">Video 1</option>
+                                        <option value="https://www.youtube.com/embed/VMZLPl16P5c">Video 2</option>
+                                        <option value="https://www.youtube.com/embed/pZHJU9T0vwE">Video 3</option>
+                                    </select>
+                                  
+                                    <div id="video-container" class="w-full">
+                                        <iframe width="300" height="300" id="video-player" class="hidden w-full" src="" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                  
+                                  
+                                
+                            </div>
+                </div>
+        </div>
+
+        
+
+        <div class="flex-1 p-8">
+
+
+            <h1 class="font-bold text-2xl">Logical Operations</h1>
+            <br>
+            <div class="flex w-4/5">
+
+                <div class="code-editor">
+                    <div class="header">
+                        <span class="title">Java</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon">
+                            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                            <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                                <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                    </div>
+                   
+                    
+                    <div class="editor-content">
+                        <code class="code">
+                            <p><span class="color-0">public class</span> <span class="color-1">Addition</span> <span>{</span></p>
+                            <p class="property"><span class="color-2">public static void</span> main(String[] args) <span>{</span></p>
+                            <p class="property">int num1 = 5;</p>
+                            <p class="property">int num2 = 10;</p>
+                            <p class="property">int sum = num1 + num2;</p>
+                            <p class="property">System.out.println(<span class="color-3">"Sum: "</span> + sum);</p>
+                            <p class="property"><span>}</span></p>
+                            <p><span>}</span></p>
+                        </code>
+                    </div>
+                </div>
+            
+            <div class="video-selector px-32 ">
+
+                <div class="flex flex-col items-center">
+                    <label for="video-select1" class="mb-2">Select a video:</label>
+                    <select id="video-select1" class="mb-4">
+                        <option value="https://www.youtube.com/watch?v=G0mFJUFMzjs&list=PLZPZq0r_RZOMhCAyywfnYLlrjiVOkdAI1&index=4">Video 4</option>
+                        <option value="https://www.youtube.com/embed/w0VTlSOXBs8">Video 5</option>
+                        <option value="https://www.youtube.com/embed/pZHJU9T0vwE">Video 6</option>
+                    </select>
+<div id="video-container1" class="w-full">
+                        <iframe width="300" height="300"  id="video-player1" class="hidden w-full" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        
+
+        <div class="flex-1 p-8">
+            <br>
+
+            <h1 class="font-bold text-2xl">Simple if condition</h1>
+            <br>
+            <div class="flex w-4/5">
+
+            <div class="code-editor">
+                <div class="header">
+                    <span class="title">Java</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon">
+                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M6 6L18 18"></path>
+                            <path stroke-linecap="round" stroke-width="2" stroke="#4C4F5A" d="M18 6L6 18"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="editor-content">
+                    <code class="code">
+                        <p><span class="color-0">public class</span> <span class="color-1">LargestNumber</span> <span>{</span></p>
+                        <p class="property"><span class="color-2">public static void</span> main(String[] args) <span>{</span></p>
+                        <p class="property">int num1 = 10, num2 = 20, num3 = 15;</p>
+                        <p class="property"><span class="color-0">if</span> (num1 >= num2 <span class="color-0">&&</span> num1 >= num3)</p>
+                        <p class="property">System.out.println(num1 + <span class="color-3">" is the largest number."</span>);</p>
+                        <p class="property"><span class="color-0">else if</span> (num2 >= num1 <span class="color-0">&&</span> num2 >= num3)</p>
+                        <p class="property">System.out.println(num2 + <span class="color-3">" is the largest number."</span>);</p>
+                        <p class="property"><span class="color-0">else</span></p>
+                        <p class="property">System.out.println(num3 + <span class="color-3">" is the largest number."</span>);</p>
+                        <p class="property"><span>}</span></p>
+                        <p><span>}</span></p>
+                    </code>
+                </div>
+            </div>
+            
+            <div class="video-selector px-32 ">
+
+                <div class="flex flex-col items-center">
+                    <label for="video-select2" class="mb-2">Select a video:</label>
+                    <select id="video-select2" class="mb-4">
+                        <option value="https://www.youtube.com/embed/wAEPokhj5Q4">Video 7</option>
+                        <option value="https://www.youtube.com/embed/Om3qzMoaIUo">Video 8</option>
+                        <option value="https://www.youtube.com/embed/MY03bt_0JQI">Video 9</option>
+                    </select>
+                        <iframe width="300" height="300" id="video-player2" class="hidden w-full" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        
+        
+    </div>
+    <script>
+        // JavaScript to handle video selection
+        const videoSelect = document.getElementById('video-select');
+        const videoPlayer = document.getElementById('video-player');
+      
+        videoSelect.addEventListener('change', function() {
+            const selectedVideoUrl = this.value;
+          
+            // Set the source of the iframe to the selected video URL
+            videoPlayer.src = selectedVideoUrl;
+          
+            // Show the video player
+            videoPlayer.classList.remove('hidden');
+        });
+
+                // JavaScript to handle video selection
+                const videoSelect1 = document.getElementById('video-select1');
+        const videoPlayer1 = document.getElementById('video-player1');
+      
+        videoSelect1.addEventListener('change', function() {
+            const selectedVideoUrl = this.value;
+          
+            // Set the source of the iframe to the selected video URL
+            videoPlayer1.src = selectedVideoUrl;
+          
+            // Show the video player
+            videoPlayer1.classList.remove('hidden');
+        });
+
+                // JavaScript to handle video selection
+                const videoSelect2 = document.getElementById('video-select2');
+        const videoPlayer2 = document.getElementById('video-player2');
+      
+        videoSelect2.addEventListener('change', function() {
+            const selectedVideoUrl = this.value;
+          
+            // Set the source of the iframe to the selected video URL
+            videoPlayer2.src = selectedVideoUrl;
+          
+            // Show the video player
+            videoPlayer2.classList.remove('hidden');
+        });
+    </script>
+      
+</body>
+
+</html>

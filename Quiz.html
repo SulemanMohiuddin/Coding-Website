@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+        <div class="container-fluid">
+            <button class="btn btn-danger ms-auto" onclick="quitQuiz()">Quit</button>
+        </div>
+    </nav>
+
+    <div class="container py-5 col-7">
+        <h1 class="text-center mb-4">Programming Language Quiz</h1>
+        <div class="mb-3">
+            <label for="language-select" class="form-label">Select a programming language:</label>
+            <select id="language-select" class="form-select">
+                <option value="python">Python</option>
+                <option value="javascript">HTML / javascript</option>
+                <option value="cpp">C++</option>
+                <option value="java">Java</option>
+                <option value="c">C Language</option>
+                <!-- Add more options for other programming languages -->
+            </select>
+        </div>
+        <button onclick="startQuiz()" class="btn btn-primary">Start Quiz</button>
+        <div id="quiz-container" class="mt-4 d-none">
+            <h2 class="mb-3">Quiz Questions</h2>
+            <div id="question" class="mb-3"></div>
+            <div id="options" class="col-2"></div>
+        </div>
+        <div id="result" class="mt-4 d-none">
+            <h2 class="mb-3">Quiz Results</h2>
+            <p id="score"></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (not essential for this example but included for completeness) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        let quizData = {
+            python: [
+    { question: "What is the output of 'print(3 + 4 * 5)'?", options: ["35", "50", "23", "27"], answer: "27" },
+    { question: "What is the capital of France?", options: ["Paris", "Berlin", "London", "Madrid"], answer: "Paris" },
+    { question: "What is the result of '2 ** 3' in Python?", options: ["6", "8", "16", "64"], answer: "8" },
+    { question: "What is the output of 'len([1, 2, 3, 4])'?", options: ["1", "2", "3", "4"], answer: "4" },
+    { question: "What is the output of '3 == 3.0' in Python?", options: ["True", "False"], answer: "True" },
+    { question: "What will be the value of x after the following code: 'x = 10\nx += 5\nx *= 2'?", options: ["30", "25", "20", "15"], answer: "30" },
+    { question: "What is the output of 'list(range(3, 10, 2))' in Python?", options: ["[3, 5, 7, 9]", "[3, 5, 8]", "[2, 4, 6, 8]", "[2, 5, 8]"], answer: "[3, 5, 7, 9]" },
+    { question: "What method can be used to remove an element from a list in Python?", options: ["pop()", "remove()", "delete()", "discard()"], answer: "pop()" },
+    { question: "What is the output of 'bool([])' in Python?", options: ["True", "False"], answer: "False" },
+    { question: "What does the 'in' operator do in Python?", options: ["Checks if a key exists in a dictionary", "Checks if a value exists in a list", "Checks if a substring exists in a string", "All of the above"], answer: "All of the above" },
+],
+
+javascript: [
+    { question: "What does DOM stand for?", options: ["Document Object Model", "Data Object Model", "Digital Object Model", "Document Oriented Model"], answer: "Document Object Model" },
+    { question: "What is the output of 'typeof null'?", options: ["object", "number", "null", "undefined"], answer: "object" },
+    { question: "Which event occurs when the user clicks on an HTML element?", options: ["onmouseover", "onchange", "onclick", "onsubmit"], answer: "onclick" },
+    { question: "Which HTML tag is used to define a hyperlink?", options: ["<a>", "<link>", "<href>", "<hyperlink>"], answer: "<a>" },
+    { question: "What does CSS stand for?", options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"], answer: "Cascading Style Sheets" },
+    { question: "Which property is used to change the background color of an element in CSS?", options: ["color", "background-color", "background", "bgcolor"], answer: "background-color" },
+    { question: "In JavaScript, what is a block of code called that is used to perform a specific task?", options: ["Function", "Array", "Variable", "Loop"], answer: "Function" },
+    { question: "Which operator is used to assign a value to a variable?", options: ["+", "-", "=", "*"], answer: "=" },
+    { question: "How do you write 'Hello World' in an alert box in JavaScript?", options: ["msg('Hello World')", "alertBox('Hello World')", "msgBox('Hello World')", "alert('Hello World')"], answer: "alert('Hello World')" },
+],
+
+cpp: [
+    { question: "What is the output of 'cout << 3 + 4 * 5;'?", options: ["35", "50", "23", "27"], answer: "23" },
+    { question: "What is the capital of Italy?", options: ["Paris", "Berlin", "Rome", "Madrid"], answer: "Rome" },
+    { question: "Which header file is used for input and output in C++?", options: ["<stdio.h>", "<iostream>", "<stdlib.h>", "<math.h>"], answer: "<iostream>" },
+    { question: "What is the correct way to declare a variable in C++?", options: ["variable x;", "int x;", "x = int;", "int variable x;"], answer: "int x;" },
+    { question: "What is the operator used to find the remainder of a division operation in C++?", options: ["%", "/", "*", "&"], answer: "%" },
+    { question: "What is the syntax for a single-line comment in C++?", options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "%% This is a comment"], answer: "// This is a comment" },
+    { question: "Which loop is used to execute a block of code repeatedly as long as a condition is true?", options: ["for loop", "while loop", "do-while loop", "if statement"], answer: "while loop" },
+    { question: "What is the keyword used to define a function in C++?", options: ["def", "function", "define", "void"], answer: "void" },
+    { question: "What does the 'cin' object in C++ do?", options: ["Outputs data to the console", "Inputs data from the console", "Performs mathematical calculations", "Defines a class"], answer: "Inputs data from the console" },
+    { question: "Which data type is used to store decimal numbers in C++?", options: ["int", "float", "char", "double"], answer: "float" },
+],
+
+java: [
+    { question: "What is the output of 'System.out.println(3 + 4 * 5);'?", options: ["35", "50", "23", "27"], answer: "23" },
+    { question: "Which keyword is used to define a class in Java?", options: ["class", "void", "public", "static"], answer: "class" },
+    { question: "What is the capital of Japan?", options: ["Tokyo", "Seoul", "Beijing", "Bangkok"], answer: "Tokyo" },
+    { question: "What is the correct syntax to declare a variable in Java?", options: ["variable x;", "int x;", "x = int;", "int variable x;"], answer: "int x;" },
+    { question: "Which operator is used to compare two values for equality in Java?", options: ["==", "=", "<>", "!=", "~="], answer: "==" },
+    { question: "What is the default value of the 'char' data type in Java?", options: ["0", "null", "false", "''"], answer: "''" },
+    { question: "Which loop in Java is used to execute a block of code repeatedly as long as a condition is true?", options: ["for loop", "while loop", "do-while loop", "if statement"], answer: "while loop" },
+    { question: "What is the keyword used to define a method in Java?", options: ["def", "method", "define", "void"], answer: "void" },
+    { question: "Which method is used to get user input in Java?", options: ["print()", "nextLine()", "readLine()", "input()"], answer: "nextLine()" },
+    { question: "Which data type is used to store floating-point numbers with double precision in Java?", options: ["int", "float", "char", "double"], answer: "double" },
+],
+
+c: [
+    { question: "What is the output of 'printf(\"%d\", 3 + 4 * 5);'?", options: ["35", "50", "23", "27"], answer: "23" },
+    { question: "Which symbol is used to indicate the start of a comment in C?", options: ["//", "#", ";", "/*"], answer: "//" },
+    { question: "What is the capital of India?", options: ["Delhi", "Mumbai", "Kolkata", "Chennai"], answer: "Delhi" },
+    { question: "Which data type is used to store integer values in C?", options: ["int", "float", "char", "double"], answer: "int" },
+    { question: "What is the correct syntax to declare an array in C?", options: ["int array[];", "array<int>;", "array[] int;", "int[] array;"], answer: "int array[];" },
+    { question: "Which operator is used to access the value stored in a pointer variable in C?", options: ["*", "&", "->", ">>"], answer: "*" },
+    { question: "What is the result of '5 / 2' in C?", options: ["2.5", "2", "2.0", "2.25"], answer: "2" },
+    { question: "Which loop in C is executed at least once even if the condition is false?", options: ["for loop", "while loop", "do-while loop", "if statement"], answer: "do-while loop" },
+    { question: "What is the keyword used to define a constant in C?", options: ["define", "constant", "const", "def"], answer: "const" },
+    { question: "Which library should be included to use the 'printf()' function in C?", options: ["<stdio.h>", "<stdlib.h>", "<math.h>", "<string.h>"], answer: "<stdio.h>" },
+]
+
+
+
+        };
+
+        let currentLanguage = "";
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timer;
+
+        function startQuiz() {
+            const languageSelect = document.getElementById("language-select");
+            currentLanguage = languageSelect.value;
+            currentQuestionIndex = 0;
+            score = 0;
+            displayQuestion();
+            document.getElementById("quiz-container").classList.remove("d-none");
+            document.getElementById("result").classList.add("d-none");
+            startTimer();
+        }
+
+        function displayQuestion() {
+    const question = quizData[currentLanguage][currentQuestionIndex];
+    document.getElementById("question").innerText = question.question;
+    const optionsContainer = document.getElementById("options");
+    optionsContainer.innerHTML = "";
+    optionsContainer.classList.add("d-flex", "flex-column"); // Add flex classes
+    question.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.classList.add("btn", "btn-secondary", "mb-2");
+        button.onclick = () => selectAnswer(option);
+        optionsContainer.appendChild(button);
+    });
+}
+
+        function selectAnswer(selectedOption) {
+            const question = quizData[currentLanguage][currentQuestionIndex];
+            if (selectedOption === question.answer) {
+                score++;
+            }
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData[currentLanguage].length) {
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
+        }
+
+        function endQuiz() {
+    clearInterval(timer);
+    const resultContainer = document.getElementById("result");
+    const scoreElement = document.getElementById("score");
+    scoreElement.innerText = `Your score: ${score} / ${quizData[currentLanguage].length}`;
+
+    // Add classes based on score
+    if (score < 5) {
+        resultContainer.classList.remove("text-emerald-500");
+        resultContainer.classList.add("text-red-600");
+        scoreElement.innerText += " - Failed";
+    } else {
+        resultContainer.classList.remove("text-red-600");
+        resultContainer.classList.add("text-emerald-500");
+        scoreElement.innerText += " - Passed";
+    }
+
+    document.getElementById("quiz-container").classList.add("d-none");
+    resultContainer.classList.remove("d-none");
+}
+
+        function startTimer() {
+            let timeLeft = 300; // 5 minutes
+            timer = setInterval(() => {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    endQuiz();
+                }
+            }, 1000);
+        }
+
+        function quitQuiz() {
+        
+            window.location.href = "home.html"; // Redirect to home page
+            const scoreElement = document.getElementById("score");
+            if (score < 5) {
+                alert("Please study harder");
+    } else {
+        alert("Congratulations");
+    }
+        }
+    </script>
+</body>
+</html>
